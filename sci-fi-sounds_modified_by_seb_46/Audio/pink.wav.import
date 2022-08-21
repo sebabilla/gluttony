@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pink.wav-6578b3a07d34cb250ce6296018807ec1.sample"
+
+[deps]
+
+source_file="res://sci-fi-sounds_modified_by_seb_46/Audio/pink.wav"
+dest_files=[ "res://.import/pink.wav-6578b3a07d34cb250ce6296018807ec1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

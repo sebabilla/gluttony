@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Jeu.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Decompte.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Feuille.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Techno.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 800, -2, 0, 0, 0, 0, 802, 601, 0, 0, 0, 0, 0, 599, 0, 0, 0, 0, 0, -1 )
+}
+
+[node name="Jeu" type="Node"]
+script = ExtResource( 1 )
+nourriture = ExtResource( 4 )
+ennemi = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="FeuillesTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="TechnoTimer" type="Timer" parent="."]
+
+[node name="CheminFeuilles" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="DepartDesFeuilles" type="PathFollow2D" parent="CheminFeuilles"]
+position = Vector2( 0, -1 )
+rotation = -0.00125003
+
+[node name="Decompte" parent="." instance=ExtResource( 3 )]
+
+[node name="Son" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="victoire_croissance" from="Player" to="." method="_on_Player_victoire_croissance"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="FeuillesTimer" to="." method="_on_FeuillesTimer_timeout"]
+[connection signal="timeout" from="TechnoTimer" to="." method="_on_TechnoTimer_timeout"]
+[connection signal="fini" from="Decompte" to="." method="_on_Decompte_fini"]

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/brown.wav-187fce1051834936a37c3882b971c3d3.sample"
+
+[deps]
+
+source_file="res://sci-fi-sounds_modified_by_seb_46/Audio/brown.wav"
+dest_files=[ "res://.import/brown.wav-187fce1051834936a37c3882b971c3d3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
